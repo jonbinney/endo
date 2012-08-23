@@ -10,36 +10,34 @@
 
 namespace sgraph
 {
-  /* class used for inputs, outputs, and params */
   class Ports
   {
   public:
     Ports() {};
 
-    /* should have a locking version of this */    
     void declare(const std::string &port_name, const std::string &doc) {
       port_names_.push_back(port_name);
       port_docs_[port_name] = doc;
-      port_vals_[port_name] = boost::shared_ptr<boost::any>();
+      port_vals_[port_name] = boost::any();
     }
 
-    /* should have a locking version of this */
-    const boost::shared_ptr<boost::any> &get(const std::string &port_name) {
-      return port_vals_[port_name];
+    template <typename T>
+    const T get(const std::string &port_name) {
+      return boost::any_cast<T>(port_vals_[port_name]);
     }
 
-    /* should have a locking version of this */
-    void set(const std::string &port_name, const boost::shared_ptr<boost::any> &val) {
+    template <typename T>
+    void set(const std::string &port_name, const T &val) {
       port_vals_[port_name] = val;
     }
 
   private:
     std::vector<std::string> port_names_;
     std::map<std::string, std::string> port_docs_;
-    std::map<std::string, boost::shared_ptr<boost::any> > port_vals_;
+    std::map<std::string, boost::any > port_vals_;
   };
 
-  /* base class for all cells */
+
   class Cell
   {
   public:
