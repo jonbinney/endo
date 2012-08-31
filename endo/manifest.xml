@@ -1,9 +1,5 @@
 <package>
-  <description brief="sgraph">
-
-     sgraph
-
-  </description>
+  <description brief="endo">endo</description>
   <author>Jonathan Binney</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
