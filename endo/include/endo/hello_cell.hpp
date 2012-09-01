@@ -24,7 +24,7 @@ namespace endo
     virtual void setParams(const Ports &params) {}
 
     virtual void process(Ports &inputs, Ports &outputs) {
-      std::cout << "Hello:" << inputs.get<std::string>("message") << std::endl;
+      std::cout << "Hello:" << inputs.getValue<std::string>("message") << std::endl;
     }
 
   };

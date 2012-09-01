@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
   hello_cell.setParams(params);
   hello_cell.declareIO(inputs, outputs);
 
-  inputs.set<std::string>("message", std::string("my message"));
+  inputs.setValue<const std::string>(std::string("message"), std::string("my message"));
   hello_cell.process(inputs, outputs);
 
   return 0;

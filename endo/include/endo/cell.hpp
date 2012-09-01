@@ -8,6 +8,8 @@
 #include <boost/any.hpp>
 #include <boost/shared_ptr.hpp>
 
+#include <endo/ports.hpp>
+
 namespace endo
 {
   class Cell
@@ -17,7 +19,7 @@ namespace endo
 
     virtual void declareParams(Ports &params) = 0;
 
-    virtual void setParams(const Ports &params) = 0;
+    virtual void setParams(const Ports &params) {};
 
     virtual void declareIO(Ports &inputs, Ports &outputs) = 0;
 
