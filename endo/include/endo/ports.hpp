@@ -1,5 +1,5 @@
-#ifndef ENDO_CELL_
-#define ENDO_CELL_
+#ifndef ENDO_PORTS_
+#define ENDO_PORTS_
 
 #include <string>
 #include <vector>
@@ -23,13 +23,13 @@ namespace endo
     }
 
     template <typename T>
-    boost::shared_ptr<const T> get(const std::string &port_name) {
+    T getValue(const std::string &port_name) {
       return port_map_.at(port_name).getValue(port_name);
     }
 
     template <typename T>
-    void set(const std::string &port_name, const boost::shared_pointer<const T> &val) {
-      port_vals_[port_name] = val;
+    void setValue(const std::string &port_name, T &value) {
+      port_map_[port_name].setValue(value);
     }
 
   private:
@@ -37,3 +37,5 @@ namespace endo
     std::vector<std::string, Port> port_map_;
   };
 } /* namespace endo */
+
+#endif /* ENDO_PORTS_ */

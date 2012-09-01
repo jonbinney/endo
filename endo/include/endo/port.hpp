@@ -1,5 +1,5 @@
-#ifndef ENDO_CELL_
-#define ENDO_CELL_
+#ifndef ENDO_PORT_
+#define ENDO_PORT_
 
 #include <string>
 #include <boost/any.hpp>
@@ -7,7 +7,6 @@
 
 namespace endo
 {
-  
   class Port
   {
   public:
@@ -15,16 +14,18 @@ namespace endo
       : name_(name), doc_(doc) {}
 
     template <typename T>
-    setValue(const boost::shared_ptr<const T> &value)
-    {
+    setValue(const T &value) {
       value_ = value;
     }
 
     template <typename T>
-    boost::shared_ptr<const T> getValue()
-    {
-      return boost::any_cast<boost::shared_ptr<const T> >(value_);
+    T getValue() {
+      return boost::any_cast<T> >(value_);
     }
+
+    std::string getName() {return name_}
+
+    std::string getDoc() {return doc_}
 
   private:
     std::string name_;
@@ -33,3 +34,5 @@ namespace endo
   };
 
 } /* namespace endo */
+
+#endif /* ENDO_PORT_ */

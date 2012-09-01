@@ -1,12 +1,11 @@
-#ifndef SGRAPH_HELLO_CELL_
-#define SGRAPH_HELLO_CELL_
+#ifndef ENDO_HELLO_CELL_
+#define ENDO_HELLO_CELL_
 
 #include <string>
 #include <iostream>
-#include <sgraph/cell.hpp>
+#include <endo/cell.hpp>
 
-
-namespace sgraph
+namespace endo
 {
   class HelloCell : public Cell
   {
@@ -31,4 +30,4 @@ namespace sgraph
   };
 }
 
-#endif /* SGRAPH_HELLO_CELL_ */
+#endif /* ENDO_HELLO_CELL_ */

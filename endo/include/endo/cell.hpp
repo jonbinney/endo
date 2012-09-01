@@ -10,9 +10,6 @@
 
 namespace endo
 {
-
-
-
   class Cell
   {
   public:
@@ -25,9 +22,7 @@ namespace endo
     virtual void declareIO(Ports &inputs, Ports &outputs) = 0;
 
     virtual void process(Ports &inputs, Ports &outputs) = 0;
-
   };
-
 }
 
 #endif /* ENDO_CELL_ */

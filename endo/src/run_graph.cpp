@@ -1,10 +1,11 @@
-#include <sgraph/cell.hpp>
-#include <sgraph/hello_cell.hpp>
+#include <endo/cell.hpp>
+#include <endo/ports.hpp>
+#include <endo/hello_cell.hpp>
 #include <iostream>
 
 int main(int argc, char **argv) {
-  sgraph::HelloCell hello_cell;
-  sgraph::Ports inputs, outputs, params;
+  endo::HelloCell hello_cell;
+  endo::Ports inputs, outputs, params;
 
   hello_cell.declareParams(params);
   hello_cell.setParams(params);
